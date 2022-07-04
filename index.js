@@ -1,7 +1,9 @@
 const express=require("express");
 const app = express();
 const bodyParser=require("body-parser");
-const connection=require("./database/database")
+const connection=require("./database/database");
+
+const categoriesController =require("./categories/CategoriesController");
 
 app.set("view engine","ejs");
 app.use(express.static("./public"));
@@ -16,7 +18,11 @@ connection
                                     console.log("Conexao feita com sucesso!")
                   }).catch((error)=>{
                                     console.log(error)
-                  })
+                  });
+
+
+
+app.use("/",categoriesController)
 
 
 app.get("/",(req,res)=>{
