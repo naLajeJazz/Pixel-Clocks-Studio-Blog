@@ -5,7 +5,7 @@
 <div class="container">
 
 
-<table class="table table-bordered shadow-sm">
+<table class="table table-light table-striped shadow-sm">
                   <thead>
                                     <tr>
                                                       <th>ID</th>
@@ -15,12 +15,16 @@
                                     </tr>
                   </thead>
                   <tbody>
-                                    <tr>
-                                                      <th>id</th>
-                                                      <th>nnn</th>
-                                                      <th>slug</th>
-                                                      <th>ações</th>
-                                    </tr>
+                                    
+                                    <% categories.forEach(category=> {  %> 
+                                                      <tr>
+                                                                        <th><%= category.id %> </th>
+                                                                        <th><%= category.title %></th>
+                                                                        <th><%= category.slug %></th>
+                                                                        <th></th>
+                                                      </tr>
+
+                                                      <% }) %> 
                   </tbody>
 </table>
 </div>
